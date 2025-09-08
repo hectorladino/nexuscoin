@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#eee"/><stop offset="1" stop-color="#ddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#g)"/>
+  <g fill="#b33d2c">
+    <rect x="40" y="260" width="560" height="40" rx="6"/>
+    <rect x="40" y="200" width="560" height="40" rx="6"/>
+    <rect x="40" y="140" width="560" height="40" rx="6"/>
+  </g>
+  <text x="50%" y="60" dominant-baseline="middle" text-anchor="middle"
+        font-family="system-ui,Segoe UI,Roboto" font-size="24" fill="#444">
+    Imagen del producto
+  </text>
+</svg>

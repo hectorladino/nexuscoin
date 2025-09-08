@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+  <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#b33d2c" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23b33d2c' d='M3 21h18v-2H3v2zm2-4h14l-2-7h-4l-1-4-1 4H7l-2 7z'/></svg>">
+<title>Agendar Visita — Nexus Construcciones</title>
+<meta name="description" content="Agenda una visita técnica o reunión de proyecto con nuestros ingenieros." /></head>
+  <body>
+    
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Nexus Construcciones inicio">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 21h18v-2H3v2zm2-4h14l-2-7h-4l-1-4-1 4H7l-2 7z"></path>
+      </svg>
+      <span>Nexus Construcciones</span>
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="servicios.html">Servicios</a>
+     
+      <a href="cita.html" aria-current="page">Agendar</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a class="btn" href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <section class="hero-nosotros">
+        <div class="hero-nosotros__img">
+          <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=1600&q=80&auto=format&fit=crop" alt="Reunión con personal especializado">
+        </div>
+        <div class="hero-nosotros__text wrap">
+          <h1>Agendate <br>Con nuestro personal especializado.</h1>
+          <p>Nuestros especialistas están listos para visitar tu obra, evaluar tus necesidades y ofrecerte la mejor solución.  Programa tu cita</p>
+        </div>
+      </section>
+
+    <main class="wrap mt-6">
+     
+
+      <div class="contact-grid mt-6">
+        <!-- Columna del formulario -->
+        <form class="card" id="apptForm">
+          <div class="grid-2">
+            <label>Nombre
+              <input type="text" id="a-nombre" required>
+            </label>
+            <label>Ciudad
+              <input type="text" id="a-ciudad" value="Yopal, Casanare">
+            </label>
+          </div>
+          <label>Dirección de la obra
+            <input type="text" id="a-dir" required>
+          </label>
+          <div class="grid-2">
+            <label>Fecha
+              <input type="date" id="a-fecha" required>
+            </label>
+            <label>Hora
+              <input type="time" id="a-hora" required>
+            </label>
+          </div>
+          <label>Observaciones
+            <textarea id="a-obs" rows="4" placeholder="Ej: Es para una placa, necesito calcular materiales..."></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Confirmar Cita</button>
+        </form>
+
+        <!-- Columna de información -->
+        <div class="contact-info">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1581092446327-9b52bdc54a3e?q=80&w=2070&auto=format&fit=crop" alt="Ingeniero revisando planos" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); margin-bottom: 16px;">
+            <h4>Beneficios de la Visita Técnica</h4>
+            <ul class="checklist">
+              <li>Asesoría experta y personalizada en obra.</li>
+              <li>Mediciones precisas y optimización de materiales.</li>
+              <li>Recomendaciones sobre el tipo de producto ideal.</li>
+              <li>Claridad sobre el cronograma y costos del proyecto.</li>
+            </ul>
+            <p class="muted small" style="margin-top: 16px;">Las visitas no tienen costo en el área urbana de Yopal.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-8">
+        <h2 class="section-title">Mis citas agendadas</h2>
+        <div id="appts" class="grid-3"></div>
+      </section>
+    </main>
+    
+<footer class="site-footer mt-8">
+  <div class="wrap grid-3">
+    <div>
+      <h4>Nexus Construcciones</h4>
+      <p>Fabricación y distribución de bloques de cemento, ladrillo y soluciones integrales de construcción.</p>
+      <p class="small">© 2025 NexusCoin Construcciones. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <h4>Enlaces</h4>
+      <ul class="links">
+        <li><a href="productos.html">Catálogo de productos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+
+        <li><a href="cita.html">Agendar visita técnica</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul class="links">
+        <li>WhatsApp: +57 3108640631</li>
+        <li>Email: ventas@nexuscoinconstrucciones.co</li>
+        <li>Yopal, Casanare, Colombia</li>
+      </ul>
+      
+    </div>
+  </div>
+</footer>
+<script src="js/app.js" defer></script>
+
+  </body>
+</html>

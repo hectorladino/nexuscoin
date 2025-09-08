@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#b33d2c" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Productos — Nexus Construcciones</title>
+    <meta name="description" content="Catálogo de bloques, abuzardados, adoquines, bordillos y calados. Entrega a domicilio y cotización rápida." />
+
+    <!-- Estilos locales (no afectan tu hoja global) -->
+    <style>
+      :root { --topbar-h: 72px; }
+      /* Navegación por categorías (pegada arriba al hacer scroll) */
+      .catnav {
+        position: sticky; top: var(--topbar-h);
+        z-index: 10; background: #fff; border-bottom: 1px solid #f1e9e6;
+      }
+      .catnav .wrap { display:flex; gap:12px; flex-wrap:wrap; padding:10px 0; }
+      .catnav a {
+        padding:8px 12px; border-radius:999px; text-decoration:none;
+        border:1px solid #edd9d3; background:#fff8f6; color:#b33d2c; font-size:14px;
+      }
+      .catnav a:hover { background:#ffece7; }
+
+      /* Sección de categoría con “línea” elegante */
+      .cat { padding:18px 0 8px; }
+      .cat__title {
+        display:flex; align-items:center; gap:12px; font-weight:700;
+        font-size: clamp(18px, 2.4vw, 20px);
+      }
+      .cat__title .rule {
+        flex:1; height:1px;
+        background: linear-gradient(90deg,#e7dad6, rgba(231,218,214,0));
+      }
+
+      /* Grid de productos (no toca tus .card) */
+      .prodgrid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 16px 18px;
+        align-items: start;
+      }
+      .prod {
+        text-align:center; padding:12px 10px; border-radius:10px;
+        transition: transform .15s ease, box-shadow .15s ease;
+        background:#fff;
+      }
+      .prod:hover { transform: translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.06); }
+      .prod img {
+        width:120px; height:96px; object-fit:contain; object-position:center;
+        margin:0 auto 8px; filter: drop-shadow(0 4px 14px rgba(0,0,0,.08));
+      }
+      .prod h3 { font-size:15px; margin:6px 0 4px; }
+      .prod .muted { font-size:12px; }
+      .prod .chips { display:flex; justify-content:center; gap:6px; flex-wrap:wrap; margin:6px 0; }
+      .chip {
+        font-size:11px; padding:3px 8px; border-radius:999px;
+        background:#eef3ff; color:#3b5ccc; border:1px solid #dfe8ff;
+      }
+      .chip.ok { background:#edfdf4; color:#2e7d32; border-color:#d6f5df; }   /* disponible */
+      .chip.h  { background:#fff7ed; color:#b45309; border-color:#ffe4cc; }   /* serie H */
+
+      /* Separación suave entre bloques grandes de categorías */
+      .cat + .cat { padding-top:26px; }
+
+      /* Estilos para el visor 3D */
+      #3d-viewer-container {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 1rem;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+
+  <body>
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="wrap">
+        <a class="logo" href="index.html" aria-label="Nexus Construcciones inicio">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 21h18v-2H3v2zm2-4h14l-2-7h-4l-1-4-1 4H7l-2 7z"></path>
+          </svg>
+          <span>Nexus Construcciones</span>
+        </a>
+        <nav>
+          <a href="index.html">Inicio</a>
+          <a href="productos.html" aria-current="page">Productos</a>
+          <a href="servicios.html">Servicios</a>        
+          <a href="cita.html">Agendar</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a class="btn" href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+     <!-- Hero Section -->
+      <section class="hero-nosotros">
+        <div class="hero-nosotros__img">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Reunión de equipo empresarial">
+        </div>
+        <div class="hero-nosotros__text wrap">
+          <h1>Nuestro <br>Catalogo de productos.</h1>
+          <p>Selecione uno de nuestros productos. .</p>
+        </div>
+      </section>
+
+   
+
+    <main class="wrap" style="margin-top:22px;">
+      
+
+      <!-- ===================== BLOQUES ===================== -->
+      <section id="bloques" class="cat">
+        <div class="cat__title"><span>Bloques</span><span class="rule"></span></div>
+        <div class="prodgrid">
+          <!-- H10 / H12 / H15 / H20 -->
+          <article class="prod">
+            <img src="assets/BloqueH-1.png" alt="Bloque No. H-1">
+            <div class="chips"><span class="chip h">H-1</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-1</h3>
+            <p class="muted">8 × 17 × 36 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h1">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+             <img src="assets/BloqueH-2.png" alt="Bloque No. H-2">
+            <div class="chips"><span class="chip h">H-2</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-2</h3>
+            <p class="muted">9 × 19 × 36 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h2">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+               <img src="assets/BloqueH-3.png" alt="Bloque No. H-3">
+            <div class="chips"><span class="chip h">H-3</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-3</h3>
+            <p class="muted">12 × 19 × 39 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h3">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+               <img src="assets/BloqueH-4.png" alt="Bloque No. H-4">
+            <div class="chips"><span class="chip h">H-4</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-4</h3>
+            <p class="muted">14 × 19 × 39 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h4">Especificaciones</a></div>
+          </article>
+
+          <!-- Veneziano / Catalán / Sicalitano -->
+          <article class="prod">
+               <img src="assets/BloqueH-5.png" alt="Bloque No. H-5">
+            <div class="chips"><span class="chip">H-5</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-5</h3>
+             <p class="muted">19 × 19 × 39 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h5">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+               <img src="assets/BloqueH-6.png" alt="Bloque No. H-6">
+            <div class="chips"><span class="chip">H-6</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-6</h3>
+            <div><a class="btn js-open-modal" href="#">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+               <img src="assets/BloqueH-7.png" alt="Bloque No. H-7">
+            <div class="chips"><span class="chip">H-7</span><span class="chip ok">Disponible</span></div>
+            <h3>Bloque H-7</h3>
+            <div><a class="btn js-open-modal" href="#" data-product-id="bloque_h7">Especificaciones</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== ABUZARDADOS ===================== -->
+      <section id="abuzardados" class="cat">
+        <div class="cat__title"><span>Abuzardados</span><span class="rule"></span></div>
+        <div class="prodgrid">
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1593941707874-ef25b8b40573?w=900&q=70&auto=format&fit=crop" alt="Abuzardado H-20">
+            <div class="chips"><span class="chip h">H-20</span><span class="chip ok">Cara partida</span></div>
+            <h3>Abuzardado H-20</h3>
+            <p class="muted">12 × 40 × 20 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="abuzardado_h20">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?w=900&q=70&auto=format&fit=crop" alt="Abuzardado H-15">
+            <div class="chips"><span class="chip h">H-15</span><span class="chip ok">Cara partida</span></div>
+            <h3>Abuzardado H-15</h3>
+            <p class="muted">10 × 40 × 20 cm</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="abuzardado_h15">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?w=900&q=70&auto=format&fit=crop" alt="Abuzardado H-15 (2 Rptas)">
+            <div class="chips"><span class="chip h">H-15</span></div>
+            <h3>Abuzardado H-15 — 2 Rptas</h3>
+            <p class="muted">Muro visto decorativo</p>
+            <div><a class="btn js-open-modal" href="#" data-product-id="abuzardado_h15_2r">Especificaciones</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== ADOQUINES ===================== -->
+      <section id="adoquines" class="cat">
+        <div class="cat__title"><span>Adoquines</span><span class="rule"></span></div>
+        <div class="prodgrid">
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1590152447250-8fb4a0ddbb16?w=900&q=70&auto=format&fit=crop" alt="Adoquín Recto 6 cm">
+            <div class="chips"><span class="chip ok">Recto</span></div>
+            <h3>Adoquín 6 cm — Recto</h3>
+            <p class="muted">Tráfico peatonal / liviano</p>
+            <div><a class="btn" href="cotizador.html#adoquin_recto_6">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1531822791461-31c8ae2d4a2e?w=900&q=70&auto=format&fit=crop" alt="Adoquín Recto 8 cm">
+            <div class="chips"><span class="chip ok">Recto</span></div>
+            <h3>Adoquín 8 cm — Recto</h3>
+            <p class="muted">Tráfico moderado</p>
+            <div><a class="btn" href="cotizador.html#adoquin_recto_8">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1531822791461-31c8ae2d4a2e?w=900&q=70&auto=format&fit=crop" alt="Adoquín Tipo I 8 cm">
+            <div class="chips"><span class="chip ok">Intertrabado</span></div>
+            <h3>Adoquín 8 cm — Tipo I</h3>
+            <p class="muted">Alta trabazón / zonas de carga</p>
+            <div><a class="btn" href="cotizador.html#adoquin_tipo_i_8">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1590152447250-8fb4a0ddbb16?w=900&q=70&auto=format&fit=crop" alt="Adoquín Hexagonal 6 cm">
+            <div class="chips"><span class="chip ok">Hexagonal</span></div>
+            <h3>Adoquín 6 cm — Hexagonal</h3>
+            <p class="muted">Andenes y plazoletas</p>
+            <div><a class="btn" href="cotizador.html#adoquin_hex_6">Especificaciones</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== BORDILLOS ===================== -->
+      <section id="bordillos" class="cat">
+        <div class="cat__title"><span>Bordillos</span><span class="rule"></span></div>
+        <div class="prodgrid">
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?w=900&q=70&auto=format&fit=crop" alt="Bordillo Peatonal">
+            <div class="chips"><span class="chip ok">Peatonal</span></div>
+            <h3>Bordillo Peatonal</h3>
+            <p class="muted">75–100 cm | Liso</p>
+            <div><a class="btn" href="cotizador.html#bordillo_peatonal">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1544989221-76f28f6d8391?w=900&q=70&auto=format&fit=crop" alt="Bordillo Vehicular">
+            <div class="chips"><span class="chip ok">Vehicular</span></div>
+            <h3>Bordillo Vehicular</h3>
+            <p class="muted">Sección vial | Alto impacto</p>
+            <div><a class="btn" href="cotizador.html#bordillo_vehicular">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?w=900&q=70&auto=format&fit=crop" alt="Bordillo de Andén">
+            <div class="chips"><span class="chip">Andén</span></div>
+            <h3>Bordillo Andén</h3>
+            <p class="muted">Delimitación urbana</p>
+            <div><a class="btn" href="cotizador.html#bordillo_anden">Especificaciones</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== CALADOS ===================== -->
+      <section id="calados" class="cat">
+        <div class="cat__title"><span>Calados</span><span class="rule"></span></div>
+        <div class="prodgrid">
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1549902520-5c716741a1e3?w=900&q=70&auto=format&fit=crop" alt="Calado 20×20 — Flor">
+            <div class="chips"><span class="chip ok">20×20</span></div>
+            <h3>Calado 20×20 — Flor</h3>
+            <p class="muted">Ventilación e iluminación</p>
+            <div><a class="btn" href="cotizador.html#calado_flor_20">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1549902506-25f3a9bb4b24?w=900&q=70&auto=format&fit=crop" alt="Calado 20×20 — Rombo">
+            <div class="chips"><span class="chip ok">20×20</span></div>
+            <h3>Calado 20×20 — Rombo</h3>
+            <p class="muted">Privacidad con paso de aire</p>
+            <div><a class="btn" href="cotizador.html#calado_rombo_20">Especificaciones</a></div>
+          </article>
+
+          <article class="prod">
+            <img src="https://images.unsplash.com/photo-1549902562-1f9c1ba4c5db?w=900&q=70&auto=format&fit=crop" alt="Calado 20×20 — Cruz">
+            <div class="chips"><span class="chip ok">20×20</span></div>
+            <h3>Calado 20×20 — Cruz</h3>
+            <p class="muted">Clásico y funcional</p>
+            <div><a class="btn" href="cotizador.html#calado_cruz_20">Especificaciones</a></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" style="margin-top:40px;">
+      <div class="wrap grid-3">
+        <div>
+          <h4>Nexus Construcciones</h4>
+          <p>Fabricación y distribución de bloques de cemento, ladrillo y soluciones integrales de construcción.</p>
+          <p class="small">© 2025 NexusCoin Construcciones. Todos los derechos reservados.</p>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul class="links">
+            <li><a href="productos.html">Catálogo de productos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+           
+            <li><a href="cita.html">Agendar visita técnica</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul class="links">
+            <li>WhatsApp: +57 3108640631</li>
+            <li>Email: ventas@nexuscoinconstrucciones.co</li>
+            <li>Yopal, Casanare, Colombia</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de Especificaciones -->
+    <div id="spec-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div id="modal-body">
+          <div id="3d-viewer-container"></div>
+          <center><img src="assets/BloqueH-1.png" alt="Bloque No. H-1"></center>
+          <h3 style="text-align:center;">Bloque H-1</h3>
+          <ul class="checklist">
+            <li><strong>Dimensiones:</strong> 10cm (ancho) x 40cm (largo) x 20cm (alto)</li>
+            <li><strong>Peso aproximado:</strong> 8.5 kg</li>
+            <li><strong>Resistencia:</strong> 4.0 MPa (Megapascales)</li>
+            <li><strong>Rendimiento:</strong> 12.5 unidades por metro cuadrado (m²)</li>
+            <li><strong>Uso principal:</strong> Mampostería estructural y no estructural.</li>
+          </ul>
+        </div>
+        <button class="btn modal-close-btn">Cerrar</button>
+      </div>
+    </div>
+
+    <script src="js/app.js" defer></script>
+    <script src="js/3d-viewer.js" defer></script>
+  </body>
+</html>

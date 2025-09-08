@@ -1,0 +1,71 @@
+[
+  {
+    "id": "bloque_12_40_20",
+    "nombre": "Bloque 12×40×20",
+    "descripcion": "Bloque estructural para muros portantes y no portantes.",
+    "categoria": "bloques",
+    "unidad": "unidad",
+    "precio_unit": 3800,
+    "destacado": true,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "bloque_10_40_20",
+    "nombre": "Bloque 10×40×20",
+    "descripcion": "Bloque liviano para divisiones interiores.",
+    "categoria": "bloques",
+    "unidad": "unidad",
+    "precio_unit": 3500,
+    "destacado": true,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "ladrillo_4",
+    "nombre": "Ladrillo N°4",
+    "descripcion": "Ladrillo cerámico para mampostería y acabados.",
+    "categoria": "ladrillos",
+    "unidad": "unidad",
+    "precio_unit": 800,
+    "destacado": false,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "cemento_50kg",
+    "nombre": "Cemento gris (50 kg)",
+    "descripcion": "Uso general para concretos y morteros.",
+    "categoria": "cementos",
+    "unidad": "saco",
+    "precio_unit": 38000,
+    "destacado": true,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "arena_m3",
+    "nombre": "Arena (m³)",
+    "descripcion": "Arena lavada para morteros y revoques.",
+    "categoria": "agregados",
+    "unidad": "m³",
+    "precio_unit": 90000,
+    "destacado": false,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "grava_m3",
+    "nombre": "Gravilla (m³)",
+    "descripcion": "Agregado para concretos.",
+    "unidad": "m³",
+    "precio_unit": 110000,
+    "destacado": false,
+    "imagen": "assets/placeholder.svg"
+  },
+  {
+    "id": "malla",
+    "nombre": "Malla electrosoldada 6mm",
+    "descripcion": "Refuerzo para losas y plateas.",
+    "categoria": "acero",
+    "unidad": "unidad",
+    "precio_unit": 120000,
+    "destacado": false,
+    "imagen": "assets/placeholder.svg"
+  }
+]

@@ -1,0 +1,83 @@
+/* ============ Carousel básico, responsivo y accesible ============ */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: clamp(8px, 3vw, 24px) auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  background: #000;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 500ms ease;
+  will-change: transform;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  position: relative;
+  aspect-ratio: 16/9; /* alto adaptable */
+  background: #111;
+}
+
+.carousel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel__caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: clamp(10px, 2.5vw, 20px);
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.6) 100%);
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+/* Botones */
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+.carousel__btn:hover { background: rgba(0,0,0,.65); }
+.carousel__btn--prev { left: 12px; }
+.carousel__btn--next { right: 12px; }
+
+/* Dots */
+.carousel__dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 10px;
+  display: flex; gap: 8px;
+  justify-content: center; align-items: center;
+  z-index: 2;
+}
+.carousel__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+  border: 0; cursor: pointer;
+}
+.carousel__dot[aria-current="true"] {
+  background: #fff;
+}
+
+/* Respeta usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { transition: none; }
+}
